@@ -12,7 +12,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     it('preenche os campos obrigatórios e envia o formulário', function () {
         const longText = 'Teste da caixa de texto com um texto mais longo, teste, teste, TESTE, Teste Txt()!&!*&!(!*¨@'
         cy.clock()
-        cy.get('#firstName').type('Jv', { delay: 0 })
+        cy.get('#firstName').type('JV', { delay: 0 })
         cy.get('#lastName').type('Vitor', { delay: 0 })
         cy.get('#email').type('joao@gmail.com', { delay: 0 })
         cy.get('#open-text-area').type(longText, { delay: 0 })
@@ -191,15 +191,20 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             expect(status).to.equal(200)
             expect(statusText).to.equal('OK')
             expect(body).to.include('🐈')
+            expect(body).to.include('CAC TAT')
 
         })
     })
-    it('Encontra o gato escondido', function () {
-        cy.get('#cat').invoke('show').should('be.visible')
-        cy.get('#title').invoke('text', 'CAT TAT')
-        cy.get('#subtitle').invoke('text', 'I LOVE CATS')
+    /*it('teste', function(){
+        cy.get('#firstName').
+        type('JV').should('be.equal', 'JV')
+    })*/
+//    it('Encontra o gato escondido', function () {
+  //      cy.get('#cat').invoke('show').should('be.visible')
+    //    cy.get('#title').invoke('text', 'CAT TAT')
+      //  cy.get('#subtitle').invoke('text', 'I LOVE CATS')
 
-        })
+    //})
 
 
 
