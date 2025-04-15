@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('Central de Atendimento ao Cliente TAT', function () {
     const SECONDS_OF_CY_TICK = 3000
